@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Efe Tunç | Bulut Bilişim & Depolama</title>
+<style>
+:root{--bg:#0b1220;--card:#131c2e;--tx:#e6ecf5;--mu:#8fa0ba;--ac:#38bdf8;--bd:#22304a}
+@media (prefers-color-scheme:light){:root{--bg:#f4f7fb;--card:#fff;--tx:#0f1b2d;--mu:#55657f;--ac:#0369a1;--bd:#d8e1ee}}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--tx);line-height:1.65}
+nav{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--bd);display:flex;justify-content:space-between;align-items:center;padding:14px 5%;z-index:9}
+nav b{color:var(--ac)}
+nav a{color:var(--mu);text-decoration:none;margin-left:20px;font-size:.95rem}
+nav a:hover{color:var(--ac)}
+section{max-width:1000px;margin:auto;padding:70px 5%}
+.hero{padding-top:90px}
+.tag{color:var(--ac);font-family:monospace;font-size:.9rem}
+h1{font-size:clamp(2.2rem,6vw,3.6rem);margin:8px 0}
+h1 span{color:var(--ac)}
+.hero p{color:var(--mu);max-width:620px;font-size:1.1rem}
+.btn{display:inline-block;margin-top:26px;padding:12px 24px;background:var(--ac);color:var(--bg);border-radius:8px;text-decoration:none;font-weight:600}
+h2{font-size:1.8rem;margin-bottom:28px}
+h2::before{content:"// ";color:var(--ac);font-family:monospace}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:22px}
+.card h3{color:var(--ac);margin-bottom:8px;font-size:1.1rem}
+.card p,.card li{color:var(--mu);font-size:.95rem}
+.card ul{padding-left:18px}
+.tl{border-left:2px solid var(--bd);padding-left:20px;margin-bottom:20px}
+.tl b{display:block}
+.tl small{color:var(--mu)}
+.btn.alt{background:transparent;color:var(--ac);border:2px solid var(--ac);margin-left:10px;padding:10px 22px}
+.btn.alt:hover{background:var(--ac);color:var(--bg)}
+@media(max-width:600px){.btn.alt{margin-left:0}}
+.rule{font-family:monospace;font-size:1.05rem;color:var(--ac);background:var(--card);border:1px dashed var(--ac);border-radius:10px;padding:18px;text-align:center;margin-top:18px}
+footer{text-align:center;color:var(--mu);padding:30px;border-top:1px solid var(--bd);font-size:.9rem}
+@media(max-width:600px){nav a{margin-left:12px}}
+</style>
+</head>
+<body>
+<nav><b>efe.tunç</b><div><a href="#depolama">Depolama</a><a href="#hakkimda">Hakkımda</a><a href="#egitim">Eğitim</a><a href="#iletisim">İletişim</a></div></nav>
+
+<section class="hero">
+<div class="tag">$ whoami</div>
+<h1>Merhaba, ben <span>Efe Tunç</span></h1>
+<p>Bulut bilişim operatörlüğü öğrencisiyim. Uzmanlık alanım <b>veri depolama</b>: verinin güvenli, erişilebilir ve verimli şekilde saklanması.</p>
+<a class="btn" href="#depolama">Depolama Notlarım</a>
+<a class="btn alt" href="Efe_Tunc_CV.pdf" download="Efe_Tunc_CV.pdf">Özgeçmişimi İndir</a>
+</section>
+
+<section id="depolama">
+<h2>Depolama</h2>
+<div class="grid">
+<div class="card"><h3>Blok Depolama</h3><p>Veriyi sabit boyutlu bloklar halinde saklar. Veritabanları ve sanal makine diskleri gibi düşük gecikme isteyen iş yükleri için uygundur (SAN, iSCSI).</p></div>
+<div class="card"><h3>Dosya Depolama</h3><p>Hiyerarşik klasör yapısıyla paylaşımlı erişim sağlar. Ortak dosya paylaşımı için yaygındır (NAS, NFS, SMB).</p></div>
+<div class="card"><h3>Nesne Depolama</h3><p>Veriyi metadata ile birlikte nesne olarak tutar. Ölçeklenebilirdir; yedek, arşiv ve medya içerikleri için idealdir (S3 tarzı servisler).</p></div>
+<div class="card"><h3>RAID</h3><ul><li>RAID 0: hız, koruma yok</li><li>RAID 1: yansıtma</li><li>RAID 5/6: eşlik ile dayanıklılık</li><li>RAID 10: hız + yansıtma</li></ul></div>
+<div class="card"><h3>Yedekleme & Kurtarma</h3><p>Tam, artımlı ve fark yedekleme yöntemleri; RPO ve RTO hedeflerine göre yedekleme planı hazırlama.</p></div>
+<div class="card"><h3>Bulutta Depolama</h3><p>Depolama katmanları (sık / seyrek / arşiv erişim), yaşam döngüsü kuralları, şifreleme ve erişim yetkilendirme.</p></div>
+</div>
+<div class="rule">3-2-1 Yedekleme Kuralı: 3 kopya · 2 farklı ortam · 1 uzak konum</div>
+</section>
+
+<section id="hakkimda">
+<h2>Hakkımda</h2>
+<div class="card"><p>2006 doğumluyum. Bulut bilişim alanında kendimi geliştiriyor, özellikle verinin nasıl saklandığı, korunduğu ve yönetildiği konusuna odaklanıyorum. Amacım, bulut altyapılarında depolama sistemlerini doğru tasarlayan ve yöneten bir profesyonel olmak.</p></div>
+</section>
+
+<section id="egitim">
+<h2>Eğitim</h2>
+<div class="tl"><b>Alparslan Bilim ve Teknoloji Üniversitesi</b>Bulut Bilişim Operatörlüğü<small>Devam ediyor</small></div>
+<div class="tl"><b>İlhan Atış Anadolu Lisesi</b><small>Lise</small></div>
+</section>
+
+<section id="iletisim">
+<h2>İletişim</h2>
+<div class="card"><p>E-posta: <b>ornek@eposta.com</b> (kendi adresinizle değiştirin)<br>LinkedIn / GitHub: kendi bağlantılarınızı ekleyin</p></div>
+</section>
+
+<footer>© 2026 Efe Tunç</footer>
+</body>
+</html>
